@@ -15,10 +15,36 @@
 		padding:@menu-body-padding;
 	}
 
+	.menu-item-audio-inner {
+		display:inline;
+    	float: right;
+	}
+
+	.menu-item-audio-toggle {
+        color: @white;
+        background-color: @item-color;
+        padding: @item-padding;
+        .transition-all-colors;
+        &:hover{
+            background-color: @item-color-hover;
+        }
+	}
+
 	.menu-item {
 		.responsive-medium;
 		.responsive-small;
-		width:50%;
+
+		/////////////////////////////////
+		
+		// 2 row = 48%
+		// 3 row = 32%
+		// 4 row = 24%
+		
+		width:24%;
+		
+		/////////////////////////////////
+
+
 		float:left;
         .dir-rtl & {
             float:right;
@@ -26,7 +52,7 @@
 		margin-top:@menu-body-padding-bottom;
 		margin-bottom:20px;
 
-
+		/*
 		&.nth-child-even{
 			.menu-item-inner{
 				margin-left:5%;
@@ -36,7 +62,8 @@
 		        }
 			}
 		}
-
+		*/
+		/*
 		&.nth-child-odd {
 			clear: both;
 			
@@ -48,6 +75,7 @@
                 }
 			}
 		}
+		*/
 	}
 
 	.menu-item-inner {
@@ -69,7 +97,14 @@
 	}
 
 	.menu-item-button {
-		padding:@menu-body-padding;
+
+		//padding:@menu-body-padding;
+
+		/////////////////////////////////
+		
+		margin-left: 10px;
+		
+		/////////////////////////////////
 		
 		a {
 			text-decoration: none;
@@ -91,8 +126,21 @@
 
 	.menu-item-duration {
 		float:right;
+
+		/////////////////////////////////
+		
+		text-align: right;
+		
+		/////////////////////////////////
+
         .dir-rtl & {
             float:left;
+
+            /////////////////////////////////
+			
+			text-align: left;
+			
+			/////////////////////////////////
         }
 	}
 }

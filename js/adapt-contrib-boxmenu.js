@@ -5,6 +5,10 @@ define([
 
     var BoxMenuView = MenuView.extend({
 
+        events: {
+            'click .menu-item-audio-toggle': 'toggleAudio'
+        },
+
         postRender: function() {
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
@@ -14,6 +18,47 @@ define([
                     this.$('.menu-container-inner').append(new BoxMenuItemView({model: item}).$el);
                 }
             });
+
+            this.audioChannel = this.model.get('_audio')._channel;
+            this.elementId = this.model.get("_id");
+
+            // Hide controls
+            if(this.model.get('_audio')._showControls==false){
+                this.$('.audio-toggle').addClass('hidden');
+            }
+            try {
+                this.audioFile = this.model.get("_audio")._media.mp3;
+            } catch(e) {
+                console.log('An error has occured loading audio');
+            }
+
+            // Set clip ID
+            Adapt.audio.audioClip[this.audioChannel].newID = this.elementId;
+            // Set listener for when clip ends
+            $(Adapt.audio.audioClip[this.audioChannel]).on('ended', _.bind(this.onAudioEnded, this));
+
+            // Check if audio is set to on
+            if(Adapt.audio.audioClip[this.audioChannel].status==1){
+                // Check if audio is set to autoplay
+                if(this.model.get("_audio")._isEnabled && this.model.get("_audio")._autoplay){
+                    Adapt.trigger('audio:playAudio', this.audioFile, this.elementId, this.audioChannel);
+                }
+            }
+
+        },
+
+        onAudioEnded: function() {
+            Adapt.trigger('audio:audioEnded', this.audioChannel);
+        },
+
+        toggleAudio: function(event) {
+            if (event) event.preventDefault();
+ 
+            if ($(event.currentTarget).hasClass('playing')) {
+                Adapt.trigger('audio:pauseAudio', this.audioChannel);
+            } else {
+                Adapt.trigger('audio:playAudio', this.audioFile, this.elementId, this.audioChannel);
+            }
         }
 
     }, {
