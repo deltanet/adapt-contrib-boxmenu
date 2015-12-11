@@ -113,4 +113,18 @@ define([
 
     });
 
+    /////////////////////////////////
+    
+    Adapt.on('menuView:postRender', function(view) {
+        
+        var config = Adapt.course.get("_start");
+        
+        if (Adapt.location._currentId == config._menuPage) {
+            $('.navigation-back-button').addClass('display-none');
+        }
+        
+    });
+    
+    /////////////////////////////////
+
 });
