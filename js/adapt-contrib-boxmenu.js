@@ -32,6 +32,13 @@ define([
                 console.log('An error has occured loading audio');
             }
 
+            // Hide audio icon if config.JSON audio is false
+            if (Adapt.config.get("_audio") && Adapt.config.get("_audio")._isEnabled) {
+                // Do nothing
+            } else {
+                this.$('.menu-item-audio-inner').css('display', 'none');
+            }
+
             // Set clip ID
             Adapt.audio.audioClip[this.audioChannel].newID = this.elementId;
             // Set listener for when clip ends
