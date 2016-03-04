@@ -73,7 +73,7 @@ define([
         },
 
         events: {
-            'click .menu-item-audio-toggle': 'toggleAudio'
+            'click .audio-toggle': 'toggleAudio'
         },
 
         render: function() {
@@ -98,8 +98,14 @@ define([
                 if (Adapt.config.get("_audio") && Adapt.config.get("_audio")._isEnabled) {
                     // Do nothing
                 } else {
-                    this.$('.menu-item-audio-inner').css('display', 'none');
+                    this.$('.audio-inner').css('display', 'none');
                 }
+
+                // Hide icon if audio is turned off
+                if(Adapt.audio.audioClip[this.audioChannel].status==0){
+                    this.$('.audio-inner button').hide();
+                }
+
                 // Set clip ID
                 Adapt.audio.audioClip[this.audioChannel].newID = this.elementId;
                 // Set listener for when clip ends
