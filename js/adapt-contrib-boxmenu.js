@@ -90,7 +90,7 @@ define([
                     this.$('.audio-toggle').addClass('hidden');
                 }
                 try {
-                    this.audioFile = this.model.get("_audio")._media.mp3;
+                    this.audioFile = this.model.get("_audio")._media.src;
                 } catch(e) {
                     console.log('An error has occured loading audio');
                 }
