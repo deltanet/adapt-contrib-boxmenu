@@ -69,6 +69,9 @@ define([
         className: 'boxmenu-audio',
 
         initialize: function() {
+
+            this.listenTo(Adapt, 'audio:updateAudioStatus', this.updateToggle);
+
             this.render();
         },
 
@@ -103,7 +106,7 @@ define([
 
                 // Hide icon if audio is turned off
                 if(Adapt.audio.audioClip[this.audioChannel].status==0){
-                    this.$('.audio-inner button').hide();
+                    this.$('.audio-toggle').addClass('hidden');
                 }
 
                 // Set clip ID
@@ -133,6 +136,15 @@ define([
                 Adapt.trigger('audio:pauseAudio', this.audioChannel);
             } else {
                 Adapt.trigger('audio:playAudio', this.audioFile, this.elementId, this.audioChannel);
+            }
+        },
+
+        updateToggle: function(){
+            console.log("updateToggle");
+            if(Adapt.audio.audioStatus == 1 && this.model.get('_audio')._showControls==true){
+                this.$('.audio-toggle').removeClass('hidden');
+            } else {
+                this.$('.audio-toggle').addClass('hidden');
             }
         }
 
