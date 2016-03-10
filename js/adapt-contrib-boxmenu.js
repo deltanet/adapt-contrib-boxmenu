@@ -70,6 +70,7 @@ define([
 
         initialize: function() {
 
+            this.listenTo(Adapt, 'remove', this.remove);
             this.listenTo(Adapt, 'audio:updateAudioStatus', this.updateToggle);
 
             this.render();
@@ -140,7 +141,6 @@ define([
         },
 
         updateToggle: function(){
-            console.log("updateToggle");
             if(Adapt.audio.audioStatus == 1 && this.model.get('_audio')._showControls==true){
                 this.$('.audio-toggle').removeClass('hidden');
             } else {
