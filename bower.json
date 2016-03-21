@@ -4,14 +4,14 @@
   "framework": "^2.0.0",
   "homepage": "https://github.com/deltanet/adapt-contrib-boxmenu-audio",
   "issues": "https://github.com/deltanet/adapt-contrib-boxmenu-audio/issues",
-  "displayName": "Box menu",
-  "menu": "boxmenu",
-  "description": "A core bundled menu",
-  "main": "js/adapt-contrib-boxmenu.js",
+  "displayName": "Box menu audio",
+  "menu": "boxmenu-audio",
+  "description": "A menu with optional audio",
+  "main": "js/adapt-contrib-boxmenu-audio.js",
   "keywords": [
     "adapt-plugin",
     "adapt-menu"
   ],
-  "license": "GPLv3",
-  "targetAttribute": "_boxMenu"
+  "license": "GPL-3.0",
+  "targetAttribute": "_boxMenuAudio"
 }

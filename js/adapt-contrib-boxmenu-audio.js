@@ -83,18 +83,18 @@ define([
         render: function() {
             var data = this.model.toJSON();
             var template = Handlebars.templates["boxmenu-audio"];
-            if(this.model.get("_audio") && this.model.get("_audio")._isEnabled){
+            if(this.model.get("_boxMenuAudio") && this.model.get("_boxMenuAudio")._audio && this.model.get("_audio")._isEnabled){
                 this.$el.html(template(data)).appendTo('.menu-header-inner');
 
-                this.audioChannel = this.model.get('_audio')._channel;
+                this.audioChannel = this.model.get('_boxMenuAudio')._audio._channel;
                 this.elementId = this.model.get("_id");
 
                 // Hide controls
-                if(this.model.get('_audio')._showControls==false){
+                if(this.model.get('_boxMenuAudio')._audio._showControls==false){
                     this.$('.audio-toggle').addClass('hidden');
                 }
                 try {
-                    this.audioFile = this.model.get("_audio")._media.src;
+                    this.audioFile = this.model.get('_boxMenuAudio')._audio._media.src;
                 } catch(e) {
                     console.log('An error has occured loading audio');
                 }
@@ -118,7 +118,7 @@ define([
                 // Check if audio is set to on
                 if(Adapt.audio.audioClip[this.audioChannel].status==1){
                     // Check if audio is set to autoplay
-                    if(this.model.get("_audio")._isEnabled && this.model.get("_audio")._autoplay){
+                    if(this.model.get("_boxMenuAudio") && this.model.get("_boxMenuAudio")._audio._isEnabled && this.model.get("_boxMenuAudio")._audio._autoplay){
                         Adapt.trigger('audio:playAudio', this.audioFile, this.elementId, this.audioChannel);
                     }
                 }

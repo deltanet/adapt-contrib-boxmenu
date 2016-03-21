@@ -20,12 +20,14 @@
 }
 
     // Audio functionality - add to each 'page' element in contentObjects.json
-"_audio": {
-    "_isEnabled": true,
-    "_showControls": true,
-    "_autoplay": true,
-    "_channel": 0,
-    "_media": {
-        "src": "course/en/audio/***.mp3"
-    }
+"_boxMenuAudio": {
+   "_audio": {
+        "_isEnabled": true,
+        "_showControls": true,
+        "_autoplay": true,
+        "_channel": 0,
+        "_media": {
+            "src": "course/en/audio/***.mp3"
+        }
+    } 
 }
