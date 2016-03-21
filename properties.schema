@@ -45,7 +45,68 @@
           "type":"object"
         },
         "contentobject": {
-          "type":"object"
+          "type": "object",
+          "properties": {
+            "_boxMenuAudio": {
+              "type": "object",
+              "required": false,
+              "legend": "Box Menu Audio",
+              "properties": {
+                "_audio": {
+                  "type": "object",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type":"boolean",
+                      "required":true,
+                      "title": "Enabled",
+                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "validators": [],
+                      "help": "Turns audio on and off. Acceptable values are true and false."
+                    },
+                    "_showControls": {
+                      "type":"boolean",
+                      "required":true,
+                      "title": "Show Audio Controls",
+                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "validators": []
+                    },
+                    "_autoplay": {
+                      "type":"boolean",
+                      "required":false,
+                      "title": "Autoplays Audio",
+                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "validators": [],
+                      "help": "Turns Audio Autoplay on and off. Acceptable values are true and false."
+                    },
+                    "_channel": {
+                      "type":"number",
+                      "required":true,
+                      "default": 0,
+                      "title": "Channel Number",
+                      "inputType": "Number",
+                      "validators": ["required", "number"],
+                      "help": "Channels represent the number of items defined in the course.json settings, by default there are 0, 1 and 2 available (3 _audioItems in the array)"
+                    },
+                    "_media": {
+                      "type":"object",
+                      "required":true,
+                      "properties":{
+                        "src": {
+                          "type":"string",
+                          "required":true,
+                          "title": "Menu Audio",
+                          "inputType": "Asset:audio",
+                          "validators": ["required"],
+                          "help": "This is the audio source used when page is viewed at mobile resolution"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         },
         "article": {
           "type":"object"
