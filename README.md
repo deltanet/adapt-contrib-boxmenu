@@ -74,12 +74,7 @@ Several menu-related elements are assigned a label using the [aria-label](https:
  
 No known limitations.  
 
-----------------------------
-<<<<<<< HEAD
 **Version number:**  2.0.9   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
-=======
-**Version number:**  2.0.3   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
->>>>>>> refs/remotes/adaptlearning/master
 **Framework versions:**  2.0     
 **Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-contrib-boxmenu/graphs/contributors)  
 **Accessibility support:** WAI AA   
