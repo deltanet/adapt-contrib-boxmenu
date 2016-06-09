@@ -1,9 +1,9 @@
 {
-  "name": "adapt-contrib-boxMenu-audio",
-  "version": "2.0.10",
+  "name": "adapt-contrib-boxMenu",
+  "version": "2.0.11",
   "framework": "^2.0.0",
-  "homepage": "https://github.com/deltanet/adapt-contrib-boxmenu-audio",
-  "issues": "https://github.com/deltanet/adapt-contrib-boxmenu-audio/issues",
+  "homepage": "https://github.com/deltanet/adapt-contrib-boxmenu",
+  "issues": "https://github.com/deltanet/adapt-contrib-boxmenu/issues",
   "displayName": "Box menu",
   "menu": "boxmenu",
   "description": "A core bundled menu",
