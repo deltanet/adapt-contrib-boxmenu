@@ -1,9 +1,13 @@
-<div class="menu-item-inner" aria-label="{{_globals._menu._boxmenu.menuItem}}" {{#if _globals._menu._boxmenu.menuItem}}tabindex="0"{{/if}}>
+<div class="menu-item-inner {{#if _locked}}locked{{/if}}" aria-label="{{_globals._menu._boxmenu.menuItem}}" {{#if _globals._menu._boxmenu.menuItem}}tabindex="0"{{/if}}>
     <div class="menu-item-graphic">
         {{#if _graphic.src}}
-            <a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}">
-                <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
-            </a>
+            {{#if _isLocked}}
+            <img src="{{_graphic.locked}}" alt="{{_graphic.alt}}" />
+                {{else}}
+                <a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}">
+                    <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
+                </a>
+            {{/if}}
         {{/if}}
     </div>
     <div class="menu-item-title">
