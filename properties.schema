@@ -45,7 +45,84 @@
           "type":"object"
         },
         "contentobject": {
-          "type":"object"
+          "type":"object",
+          "properties": {
+            "_boxMenu": {
+              "type": "object",
+              "required": false,
+              "legend": "Box Menu",
+              "properties": {
+                "_graphic": {
+                  "type":"object",
+                  "required":false,
+                  "title": "Menu Graphic",
+                  "properties":{
+                    "src": {
+                      "type":"string",
+                      "required":false,
+                      "default": "",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Image displayed for this menu item"
+                    },
+                    "alt": {
+                      "type":"string",
+                      "required":false,
+                      "default": "",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for this image"
+                    }
+                  }
+                },
+                "_lockType": {
+                  "type":"string",
+                  "required":false,
+                  "enum": ["sequential", "unlockFirst", "lockLast", "custom"],
+                  "default": "sequential",
+                  "title": "Menu Locking",
+                  "inputType": {"type": "Select", "options":["sequential", "unlockFirst", "lockLast", "custom"]},
+                  "validators": []
+                },
+                "linkLockedText": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "This is the instruction text"
+                },
+                "linkText": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "inputType": "Text",
+                  "validators": []
+                },
+                "linkVisitedText": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "inputType": "Text",
+                  "validators": []
+                },
+                "durationLabel": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "inputType": "Text",
+                  "validators": []
+                },
+                "duration": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "inputType": "Text",
+                  "validators": []
+                }
+              }
+            }
+          }
         },
         "article": {
           "type":"object"
