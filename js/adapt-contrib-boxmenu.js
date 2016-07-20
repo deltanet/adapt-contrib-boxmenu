@@ -5,6 +5,8 @@ define([
 
     var BoxMenuView = MenuView.extend({
 
+        events: {},
+
         postRender: function() {
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
@@ -15,7 +17,6 @@ define([
                 }
             });
         }
-
     }, {
         template: 'boxmenu'
     });
@@ -67,9 +68,17 @@ define([
     });
 
     Adapt.on('router:menu', function(model) {
-
         $('#wrapper').append(new BoxMenuView({model: model}).$el);
-
+    });
+    
+    Adapt.on('menuView:postRender', function(view) {
+        
+        var config = Adapt.course.get("_start");
+        
+        if (Adapt.location._currentId == config._menuPage) {
+            $('.navigation-back-button').addClass('display-none');
+        }
+        
     });
 
 });
