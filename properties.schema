@@ -47,10 +47,9 @@
         "contentobject": {
           "type":"object",
           "properties": {
-            "_boxMenu": {
+            "_deltaBoxMenu": {
               "type": "object",
               "required": false,
-              "legend": "Box Menu",
               "properties": {
                 "_graphic": {
                   "type":"object",
