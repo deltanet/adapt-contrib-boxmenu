@@ -18,7 +18,7 @@ define([
             });
         }
     }, {
-        template: 'boxmenu'
+        template: 'deltaboxmenu'
     });
 
     var BoxMenuItemView = MenuView.extend({
@@ -64,21 +64,21 @@ define([
         }
 
     }, {
-        template: 'boxmenu-item'
+        template: 'deltaboxmenu-item'
     });
 
     Adapt.on('router:menu', function(model) {
         $('#wrapper').append(new BoxMenuView({model: model}).$el);
     });
-    
+
     Adapt.on('menuView:postRender', function(view) {
-        
+
         var config = Adapt.course.get("_start");
-        
+
         if (Adapt.location._currentId == config._menuPage) {
             $('.navigation-back-button').addClass('display-none');
         }
-        
+
     });
 
 });

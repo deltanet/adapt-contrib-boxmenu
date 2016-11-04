@@ -9,28 +9,32 @@
       "required": true,
       "default": "Menu",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     },
     "durationLabel": {
       "type": "string",
       "required": true,
       "default": "Duration:",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     },
     "menuItem": {
       "type": "string",
       "required": true,
       "default": "Menu item.",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     },
     "menuEnd": {
       "type": "string",
       "required": true,
       "default": "You have reached the end of the menu.",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     }
   },
   "properties": {
@@ -70,7 +74,8 @@
                       "default": "",
                       "inputType": "Text",
                       "validators": [],
-                      "help": "Alternative text for this image"
+                      "help": "Alternative text for this image",
+                      "translatable": true
                     }
                   }
                 },
@@ -96,28 +101,32 @@
                   "required": false,
                   "default": "",
                   "inputType": "Text",
-                  "validators": []
+                  "validators": [],
+                  "translatable": true
                 },
                 "linkVisitedText": {
                   "type": "string",
                   "required": false,
                   "default": "",
                   "inputType": "Text",
-                  "validators": []
+                  "validators": [],
+                  "translatable": true
                 },
                 "durationLabel": {
                   "type": "string",
                   "required": false,
                   "default": "",
                   "inputType": "Text",
-                  "validators": []
+                  "validators": [],
+                  "translatable": true
                 },
                 "duration": {
                   "type": "string",
                   "required": false,
                   "default": "",
                   "inputType": "Text",
-                  "validators": []
+                  "validators": [],
+                  "translatable": true
                 }
               }
             }
