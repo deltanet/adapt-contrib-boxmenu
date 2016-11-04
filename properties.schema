@@ -58,15 +58,15 @@
                 "_graphic": {
                   "type":"object",
                   "required":false,
-                  "title": "Menu Graphic",
+                  "title": "Page Locked Graphic",
                   "properties":{
-                    "src": {
+                    "locked": {
                       "type":"string",
                       "required":false,
                       "default": "",
                       "inputType": "Asset:image",
                       "validators": [],
-                      "help": "Image displayed for this menu item"
+                      "help": "Image displayed for this menu item when locked"
                     },
                     "alt": {
                       "type":"string",
@@ -79,15 +79,6 @@
                     }
                   }
                 },
-                "_lockType": {
-                  "type":"string",
-                  "required":false,
-                  "enum": ["sequential", "unlockFirst", "lockLast", "custom"],
-                  "default": "sequential",
-                  "title": "Menu Locking",
-                  "inputType": {"type": "Select", "options":["sequential", "unlockFirst", "lockLast", "custom"]},
-                  "validators": []
-                },
                 "linkLockedText": {
                   "type": "string",
                   "required": false,
@@ -95,14 +86,6 @@
                   "inputType": "Text",
                   "validators": [],
                   "help": "This is the instruction text"
-                },
-                "linkText": {
-                  "type": "string",
-                  "required": false,
-                  "default": "",
-                  "inputType": "Text",
-                  "validators": [],
-                  "translatable": true
                 },
                 "linkVisitedText": {
                   "type": "string",
@@ -113,14 +96,6 @@
                   "translatable": true
                 },
                 "durationLabel": {
-                  "type": "string",
-                  "required": false,
-                  "default": "",
-                  "inputType": "Text",
-                  "validators": [],
-                  "translatable": true
-                },
-                "duration": {
                   "type": "string",
                   "required": false,
                   "default": "",

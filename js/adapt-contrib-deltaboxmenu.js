@@ -75,7 +75,7 @@ define([
 
         var config = Adapt.course.get("_start");
 
-        if (Adapt.location._currentId == config._menuPage) {
+        if (config && Adapt.location._currentId == config._isMenuDisabled) {
             $('.navigation-back-button').addClass('display-none');
         }
 
