@@ -15,24 +15,43 @@
 		padding:@menu-body-padding;
 	}
 
+	.menu-header-inner {
+		text-align: center;
+	}
+
 	.menu-item {
 		.responsive-medium;
 		.responsive-small;
-		
-		width:24%;
+
+		width:25%;
 
 		float:left;
-        .dir-rtl & {
-            float:right;
-        }
-		margin-top:@menu-body-padding-bottom;
-		margin-bottom:20px;
+    .dir-rtl & {
+      float:right;
+    }
+
+		margin-bottom:@menu-body-padding-bottom;
+
+		&.nth-child-odd {
+			clear: none;
+		}
 	}
 
 	.menu-item-inner {
 		background: @background-color;
 		padding-bottom:20px;
 		position:relative;
+
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+	}
+
+	.menu-item-graphic {
+		&:hover {
+			img {
+				opacity: 0.5;
+			}
+		}
 	}
 
 	.menu-item-graphic a {
@@ -46,51 +65,160 @@
 	.menu-graphic a {
 		display: block;
 	}
-	
+
 	.menu-item-title {
-		padding:@menu-body-padding;
+		padding: @menu-body-padding-top @menu-body-padding-sides 0 @menu-body-padding-sides;
+		.item-title;
+		font-size: @item-title-font-size + 4px;
 	}
 
 	.menu-item-body {
-		padding:@menu-body-padding;
+		padding: @menu-body-padding;
 	}
 
 	.menu-item-button {
-		
-		margin-left: 10px;
-		
-		a {
-			text-decoration: none;
-			background-color:@button-color;
-			color:@button-text-color;
-			padding:@button-padding;
-			
-			&:hover {
-				background-color:@button-hover-color;
-				color:@button-text-hover-color;
-			}
-			
+		padding: @menu-body-padding;
+
+		button {
 			&.visited {
-				background-color:@button-disabled-color;
-				color:@button-text-disabled-color;
+				background-color:@button-color-disabled;
+				color:@button-text-color-disabled;
 			}
 		}
+		text-align: center;
 	}
 
 	.menu-item-duration {
+		text-align: center;
+	}
 
-		float:right;
-		text-align: right;
+	.page-level-progress-menu-item-indicator {
+		height: 8px;
+		background-color: @menu-item-progress-color;
+		border: none;
+		border-radius: 25px;
+		clear: both;
+	}
 
-        .dir-rtl & {
-            float:left;
-			text-align: left;
-        }
-        
+	.page-level-progress-menu-item-indicator-bar {
+		height: 8px;
+		background-color: @menu-item-progress-fill-color;
+		border-radius: 25px;
+	}
+
+}
+
+.menu-3-col {
+	@media all and (max-width: @device-width-medium) {
+		.menu-item {
+			width:100% !important;
+			.menu-item-inner{
+				margin-left: 0% !important;
+				margin-right: 0% !important;
+			}
+		}
+		.menu-item-body {
+			min-height: 100px;
+		}
+	}
+	@media all and (min-width: @device-width-medium) {
+		.menu-item {
+			width:33% !important;
+			.menu-item-inner{
+				margin-left: 2.5% !important;
+				margin-right: 2.5% !important;
+			}
+		}
+		.menu-item-body {
+			min-height: 150px;
+		}
 	}
 }
 
+.menu-4-col {
+	@media all and (max-width: @device-width-medium) {
+		.menu-item {
+			width:100% !important;
+			.menu-item-inner{
+				margin-left: 0% !important;
+				margin-right: 0% !important;
+			}
+		}
+		.menu-item-body {
+			min-height: 10px;
+		}
+	}
+	@media all and (min-width: @device-width-medium) {
+		.menu-item {
+			width:50% !important;
+			.menu-item-inner{
+				margin-left: 2.5% !important;
+				margin-right: 2.5% !important;
+			}
+		}
+		.menu-item-body {
+			min-height: 100px;
+		}
+	}
+	@media all and (min-width: @device-width-large) {
+		.menu-item {
+			width:25% !important;
+			.menu-item-inner{
+				margin-left: 2.5% !important;
+				margin-right: 2.5% !important;
+			}
+		}
+		.menu-item-body {
+			min-height: 150px;
+		}
+	}
+}
 
+.menu-5-col {
+	@media all and (max-width: @device-width-medium) {
+		.menu-item {
+			width:100% !important;
+			.menu-item-inner{
+				margin-left: 0% !important;
+				margin-right: 0% !important;
+			}
+		}
+		.menu-item-body {
+			min-height: 10px;
+		}
+	}
+	@media all and (min-width: @device-width-medium) {
+		.menu-item {
+			width:50% !important;
+			.menu-item-inner{
+				margin-left: 2.5% !important;
+				margin-right: 2.5% !important;
+			}
+		}
+		.menu-item-body {
+			min-height: 100px;
+		}
+	}
+	@media all and (min-width: @device-width-large) {
+		.menu-item {
+			width:20% !important;
+			.menu-item-inner{
+				margin-left: 2.5% !important;
+				margin-right: 2.5% !important;
+			}
+		}
+		.menu-item-title {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.menu-item-body {
+			padding-top: 15px;
+			padding-left: 15px;
+			padding-right: 15px;
+			min-height: 110px;
+		}
+	}
+}
 
 @media all and (max-width:760px) {
 	.menu-title-inner{
@@ -110,9 +238,9 @@
 		.menu-item{
 			width:100%;
 			margin-bottom:20px;
-			
+
 			&.nth-child-even, &.nth-child-odd{
-				
+
 				.menu-item-inner{
 					margin:0;
 				}
