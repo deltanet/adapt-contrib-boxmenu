@@ -51,23 +51,22 @@
         "contentobject": {
           "type":"object",
           "properties": {
-            "_boxMenu": {
+            "_deltaBoxMenu": {
               "type": "object",
               "required": false,
-              "legend": "Box Menu",
               "properties": {
                 "_graphic": {
                   "type":"object",
                   "required":false,
-                  "title": "Menu Graphic",
+                  "title": "Page Locked Graphic",
                   "properties":{
-                    "src": {
+                    "locked": {
                       "type":"string",
                       "required":false,
                       "default": "",
                       "inputType": "Asset:image",
                       "validators": [],
-                      "help": "Image displayed for this menu item"
+                      "help": "Image displayed for this menu item when locked"
                     },
                     "alt": {
                       "type":"string",
@@ -75,18 +74,10 @@
                       "default": "",
                       "inputType": "Text",
                       "validators": [],
-                      "help": "Alternative text for this image"
+                      "help": "Alternative text for this image",
+                      "translatable": true
                     }
                   }
-                },
-                "_lockType": {
-                  "type":"string",
-                  "required":false,
-                  "enum": ["sequential", "unlockFirst", "lockLast", "custom"],
-                  "default": "sequential",
-                  "title": "Menu Locking",
-                  "inputType": {"type": "Select", "options":["sequential", "unlockFirst", "lockLast", "custom"]},
-                  "validators": []
                 },
                 "linkLockedText": {
                   "type": "string",
@@ -96,33 +87,21 @@
                   "validators": [],
                   "help": "This is the instruction text"
                 },
-                "linkText": {
-                  "type": "string",
-                  "required": false,
-                  "default": "",
-                  "inputType": "Text",
-                  "validators": []
-                },
                 "linkVisitedText": {
                   "type": "string",
                   "required": false,
                   "default": "",
                   "inputType": "Text",
-                  "validators": []
+                  "validators": [],
+                  "translatable": true
                 },
                 "durationLabel": {
                   "type": "string",
                   "required": false,
                   "default": "",
                   "inputType": "Text",
-                  "validators": []
-                },
-                "duration": {
-                  "type": "string",
-                  "required": false,
-                  "default": "",
-                  "inputType": "Text",
-                  "validators": []
+                  "validators": [],
+                  "translatable": true
                 }
               }
             }
