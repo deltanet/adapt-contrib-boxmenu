@@ -1,17 +1,17 @@
 {
-  "name": "adapt-contrib-boxmenu",
-  "version": "2.0.15",
+  "name": "adapt-contrib-deltaboxMenu",
+  "version": "2.0.16",
   "framework": "^2.0.0",
-  "homepage": "https://github.com/deltanet/adapt-contrib-boxmenu",
-  "issues": "https://github.com/deltanet/adapt-contrib-boxmenu/issues",
-  "displayName": "Box menu",
-  "menu": "boxmenu",
-  "description": "A core bundled menu",
-  "main": "js/adapt-contrib-boxmenu.js",
+  "homepage": "https://github.com/deltanet/adapt-contrib-deltaboxmenu",
+  "issues": "https://github.com/deltanet/adapt-contrib-deltaboxmenu/issues",
+  "displayName": "DeltaNet Box menu",
+  "menu": "deltaboxmenu",
+  "description": "A DeltaNet menu",
+  "main": "js/adapt-contrib-deltaboxmenu.js",
   "keywords": [
     "adapt-plugin",
     "adapt-menu"
   ],
-  "license": "GPLv3",
-  "targetAttribute": "_boxMenu"
+  "license": "GPL-3.0",
+  "targetAttribute": "_deltaBoxMenu"
 }

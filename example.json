@@ -12,11 +12,17 @@
         "alt": ""
     },
     "linkText": "",
-    "linkVisitedText": "",
-    "durationLabel": "",
     "duration": "",
     "_comment": "_lockType = sequential | unlockFirst | lockLast | custom",
-    "_lockType": ""
+    "_deltaBoxMenu": {
+      "linkLockedText": "",
+      "linkVisitedText": "",
+      "durationLabel": "",
+      "_graphic": {
+          "locked": "",
+          "alt": ""
+      }
+    }
 },
 
 
@@ -30,16 +36,22 @@
     "displayTitle":"Welcome to Adapt Learning",
     "body":"This page contains a working Adapt page with all core bundled components and plugins working.",
     "_graphic": {
-        "locked": "course/en/images/topic-menu-locked.jpg",
         "src": "course/en/images/origami-menu-one.jpg",
         "alt": "Welcome to Adapt Learning"
     },
-    "linkLockedText": "Locked",
+
     "linkText":"Start",
-    "linkVisitedText": "Revisit",
-    "durationLabel": "Duration:",
     "duration":"2 mins",
     "_pageLevelProgress": {
         "_isEnabled": true
+    },
+    "_deltaBoxMenu": {
+      "linkLockedText": "Locked",
+      "linkVisitedText": "Revisit",
+      "durationLabel": "",
+      "_graphic": {
+          "locked": "course/en/images/topic-menu-locked.jpg",
+          "alt": ""
+      }
     }
 }
