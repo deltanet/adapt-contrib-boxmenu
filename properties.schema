@@ -68,6 +68,14 @@
                       "validators": [],
                       "help": "Image displayed for this menu item when locked"
                     },
+                    "src": {
+                      "type": "string",
+                      "required": true,
+                      "default": "",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Background image for this page"
+                    },
                     "alt": {
                       "type":"string",
                       "required":false,
