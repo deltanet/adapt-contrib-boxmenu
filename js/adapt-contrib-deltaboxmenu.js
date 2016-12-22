@@ -8,6 +8,9 @@ define([
         events: {},
 
         postRender: function() {
+
+          this.listenTo(Adapt, "device:resize", this.resizeHeight);
+
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
                 if (item.get('_isAvailable')) {
@@ -16,7 +19,42 @@ define([
                     this.$('.menu-container-inner').append(new BoxMenuItemView({model: item}).$el);
                 }
             });
+
+            this.resizeHeight();
+        },
+
+        resizeHeight: function() {
+          if (Adapt.device.screenSize === 'large') {
+            var titleHeight = 0;
+            var bodyHeight = 0;
+            var numItems = $(".menu-container-inner > .menu-item").length;
+
+            var titleArray = new Array();
+            var bodyArray = new Array();
+
+            for(var i=1; i<=numItems; i++) {
+              titleArray[i] = $('.nth-child-'+i).find('.menu-item-title-inner').height();
+              if(titleArray[i]>titleHeight) {
+                titleHeight = titleArray[i];
+              }
+            }
+
+            for(var i=1; i<=numItems; i++) {
+              bodyArray[i] = $('.nth-child-'+i).find('.menu-item-body-inner').height();
+              if(bodyArray[i]>bodyHeight) {
+                bodyHeight = bodyArray[i];
+              }
+            }
+
+            $('.menu-item').find('.menu-item-title-inner').css('min-height',titleHeight);
+            $('.menu-item').find('.menu-item-body-inner').css('min-height',bodyHeight);
+
+          } else {
+            $('.menu-item').find('.menu-item-title-inner').css('min-height',0);
+            $('.menu-item').find('.menu-item-body-inner').css('min-height',0);
+          }
         }
+
     }, {
         template: 'deltaboxmenu'
     });
