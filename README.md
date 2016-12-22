@@ -59,7 +59,7 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 
 No known limitations.  
 
-**Version number:**  2.0.15   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
+**Version number:**  2.0.18   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
 **Framework versions:**  2.0     
 **Author / maintainer:** Deltanet, forked from [Adapt Core](https://github.com/adaptlearning/adapt-contrib-boxmenu)    
 **Accessibility support:** WAI AA   
