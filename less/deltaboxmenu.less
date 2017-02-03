@@ -108,6 +108,27 @@
 
 }
 
+.menu-2-col {
+	@media all and (max-width: @device-width-medium) {
+		.menu-item {
+			width:100% !important;
+			.menu-item-inner{
+				margin-left: 0% !important;
+				margin-right: 0% !important;
+			}
+		}
+	}
+	@media all and (min-width: @device-width-medium) {
+		.menu-item {
+			width:50% !important;
+			.menu-item-inner{
+				margin-left: 1% !important;
+				margin-right: 1% !important;
+			}
+		}
+	}
+}
+
 .menu-3-col {
 	@media all and (max-width: @device-width-medium) {
 		.menu-item {
