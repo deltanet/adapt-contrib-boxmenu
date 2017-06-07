@@ -110,6 +110,15 @@
                   "inputType": "Text",
                   "validators": [],
                   "translatable": true
+                },
+                "_inRow": {
+                  "type": "number",
+                  "required": false,
+                  "inputType": "Number",
+                  "title": "Items In Row",
+                  "default": 2,
+                  "validators": [],
+                  "help": "Set the number of items to be displayed in each row"
                 }
               }
             }

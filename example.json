@@ -15,6 +15,7 @@
     "duration": "",
     "_comment": "_lockType = sequential | unlockFirst | lockLast | custom",
     "_deltaBoxMenu": {
+      "_inRow": 3,
       "linkLockedText": "",
       "linkVisitedText": "",
       "durationLabel": "",
