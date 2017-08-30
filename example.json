@@ -15,14 +15,16 @@
     "duration": "",
     "_comment": "_lockType = sequential | unlockFirst | lockLast | custom",
     "_deltaBoxMenu": {
-      "_inRow": 3,
-      "linkLockedText": "",
-      "linkVisitedText": "",
-      "durationLabel": "",
       "_graphic": {
-          "locked": "",
+          "locked": "course/en/images/topic-menu-locked.jpg",
+          "src": "course/en/images/origami-menu-one.jpg",
           "alt": ""
-      }
+      },
+      "linkLockedText": "Locked",
+      "linkVisitedText": "Revisit",
+      "durationLabel": "",
+      "_inRow": 2,
+      "_fullwidth": false
     }
 },
 
@@ -40,19 +42,17 @@
         "src": "course/en/images/origami-menu-one.jpg",
         "alt": "Welcome to Adapt Learning"
     },
-
     "linkText":"Start",
     "duration":"2 mins",
-    "_pageLevelProgress": {
-        "_isEnabled": true
-    },
     "_deltaBoxMenu": {
+      "_graphic": {
+          "locked": "course/en/images/topic-menu-locked.jpg",
+          "src": "course/en/images/origami-menu-one.jpg",
+          "alt": ""
+      },
       "linkLockedText": "Locked",
       "linkVisitedText": "Revisit",
       "durationLabel": "",
-      "_graphic": {
-          "locked": "course/en/images/topic-menu-locked.jpg",
-          "alt": ""
-      }
+      "_inRow": 2
     }
 }

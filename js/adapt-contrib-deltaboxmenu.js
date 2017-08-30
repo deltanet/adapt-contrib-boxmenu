@@ -57,16 +57,23 @@ define([
         },
 
         resizeWidth: function() {
+          // Full width
+          if(this.model.get("_deltaBoxMenu")._fullwidth) {
+            $('.menu-container').addClass('full-width');
+          }
+
           if(this.model.get("_deltaBoxMenu")._inRow != undefined || this.model.get("_deltaBoxMenu")._inRow != "") {
             var numInRow = this.model.get("_deltaBoxMenu")._inRow;
           } else {
             return;
           }
 
-          var width = Math.floor(100 / numInRow);
+          var width = 100 / numInRow;
+          // Round down to one decimal place
+          var itemWidth = Math.floor( width * 10 ) / 10;
 
           if (Adapt.device.screenSize === 'large') {
-            $('.menu-item').css('width',width+'%');
+            $('.menu-item').css('width',itemWidth+'%');
             $('.menu-item-inner').css({
                 'margin-left': '2%',
                 'margin-right': '2%'

@@ -116,9 +116,18 @@
                   "required": false,
                   "inputType": "Number",
                   "title": "Items In Row",
-                  "default": 2,
+                  "default": "",
                   "validators": [],
                   "help": "Set the number of items to be displayed in each row"
+                },
+                "_fullwidth": {
+                  "type": "boolean",
+                  "required": false,
+                  "default": false,
+                  "title": "Is Fullwidth",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Set the layout of the items to be fullwidth"
                 }
               }
             }
