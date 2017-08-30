@@ -92,8 +92,7 @@
                   "required": false,
                   "default": "",
                   "inputType": "Text",
-                  "validators": [],
-                  "help": "This is the instruction text"
+                  "validators": []
                 },
                 "linkVisitedText": {
                   "type": "string",
@@ -124,10 +123,10 @@
                   "type": "boolean",
                   "required": false,
                   "default": false,
-                  "title": "Is Fullwidth",
+                  "title": "Is the layout fullwidth?",
                   "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Set the layout of the items to be fullwidth"
+                  "help": "If enabled the items will cover the full width of the page"
                 }
               }
             }
