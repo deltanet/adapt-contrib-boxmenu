@@ -4,14 +4,15 @@ Menu choices are framed within a box element and arranged in a grid. **Box Menu*
 
 [Visit the **Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-boxmenu/wiki) for more information about its functionality and for explanations of key properties. Options include an estimated time for completion (duration) and a progress bar to indicate the percentage of components that have been completed.
 
-##Installation
+## Installation
 
 This plugin must be installed manually.
 
 * If **Box Menu** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).
 
-##Uninstallation  
-The Adapt framework does not allow the installation of more than one menu at a time. In order to replace **Box Menu** it must be uninstalled manually.
+## Uninstallation  
+The Adapt framework does not allow the installation of more than one menu at a time. In order to replace **Box Menu** it must be uninstalled. With the root of your framework installation as your current working directory, run the following command:  
+`adapt uninstall adapt-contrib-deltaboxmenu`  
 
 <div float align=right><a href="#top">Back to Top</a></div>  
 
@@ -59,8 +60,8 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 
 No known limitations.  
 
-**Version number:**  2.1.0   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
-**Framework versions:**  2.0     
+**Version number:**  2.1.1   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>
+**Framework versions:**  2.1+     
 **Author / maintainer:** Deltanet, forked from [Adapt Core](https://github.com/adaptlearning/adapt-contrib-boxmenu)    
 **Accessibility support:** WAI AA   
 **RTL support:** yes  
