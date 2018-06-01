@@ -114,9 +114,6 @@ define([
         preRender: function() {
             this.model.checkCompletionStatus();
             this.model.checkInteractionCompletionStatus();
-            if (!this.model.get('_isVisited')) {
-                this.setVisitedIfBlocksComplete();
-            }
         },
 
         postRender: function() {
@@ -127,13 +124,6 @@ define([
                 }, this));
             } else {
                 this.setReadyStatus();
-            }
-        },
-
-        setVisitedIfBlocksComplete: function() {
-            var completedBlock = this.model.findDescendants('components').findWhere({_isComplete: true, _isOptional: false});
-            if (completedBlock != undefined) {
-                this.model.set('_isVisited', true);
             }
         },
 
