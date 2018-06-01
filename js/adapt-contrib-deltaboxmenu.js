@@ -141,14 +141,4 @@ define([
         $('#wrapper').append(new BoxMenuView({model: model}).$el);
     });
 
-    Adapt.on('menuView:postRender', function(view) {
-
-        var config = Adapt.course.get("_start");
-
-        if (config && Adapt.location._currentId == config._isMenuDisabled) {
-            $('.navigation-back-button').addClass('display-none');
-        }
-
-    });
-
 });
