@@ -4,8 +4,8 @@
             {{#if _isLocked}}
               <img src="{{_deltaBoxMenu._graphic.locked}}" alt="{{_deltaBoxMenu._graphic.alt}}" />
             {{else}}
-              <a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}">
-                  <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
+              <a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}"{{#if _graphic.alt}} aria-label="{{_graphic.alt}}" tabindex="0"{{else}} class="a11y-ignore" aria-hidden="true" tabindex="-1"{{/if}}>
+                  <img src="{{_graphic.src}}"/>
               </a>
             {{/if}}
         {{/if}}
