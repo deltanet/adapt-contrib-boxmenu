@@ -114,6 +114,10 @@ define([
         preRender: function() {
             this.model.checkCompletionStatus();
             this.model.checkInteractionCompletionStatus();
+
+            if (this.model.get('_isComplete') || this.model.get('_isVisited')) {
+                this.model.set('_isVisited', true);
+            }
         },
 
         postRender: function() {
