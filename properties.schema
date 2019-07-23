@@ -15,30 +15,30 @@
   },
   "properties": {
     "pluginLocations": {
-      "type":"object",
-      "required":true,
-      "properties":{
+      "type": "object",
+      "required": true,
+      "properties": {
         "config": {
-          "type":"object"
+          "type": "object"
         },
         "course": {
-          "type":"object"
+          "type": "object"
         },
         "contentobject": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_deltaBoxMenu": {
               "type": "object",
               "required": false,
               "properties": {
                 "_graphic": {
-                  "type":"object",
-                  "required":false,
+                  "type": "object",
+                  "required": false,
                   "title": "Page Locked Graphic",
-                  "properties":{
+                  "properties": {
                     "locked": {
-                      "type":"string",
-                      "required":false,
+                      "type": "string",
+                      "required": false,
                       "default": "",
                       "inputType": "Asset:image",
                       "validators": [],
@@ -53,7 +53,7 @@
                       "help": "Background image for this page"
                     },
                     "alt": {
-                      "type":"string",
+                      "type": "string",
                       "required":false,
                       "default": "",
                       "inputType": "Text",
@@ -109,13 +109,13 @@
           }
         },
         "article": {
-          "type":"object"
+          "type": "object"
         },
         "block": {
-          "type":"object"
+          "type": "object"
         },
         "component": {
-          "type":"object"
+          "type": "object"
         }
       }
     }

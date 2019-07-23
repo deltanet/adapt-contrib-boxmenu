@@ -1,9 +1,4 @@
-.menu-title, .menu-body{
-	color: @inverted-foreground-color;
-	margin-bottom:@menu-title-padding-bottom;
-}
-
-.menu {
+.deltaboxmenu-menu {
 	background: @primary-color;
 	.menu-container {
 		.responsive-large;
@@ -15,7 +10,12 @@
 	}
 
 	.menu-container-inner {
-		padding:@menu-body-padding;
+		padding: @menu-body-padding-top;
+	}
+
+	.menu-title, .menu-body{
+		color: @inverted-foreground-color;
+		margin-bottom: @menu-title-padding-bottom;
 	}
 
 	.menu-header-inner {
@@ -26,14 +26,14 @@
 		.responsive-medium;
 		.responsive-small;
 
-		width:25%;
+		width: 25%;
 
-		float:left;
+		float: left;
     .dir-rtl & {
-      float:right;
+      float: right;
     }
 
-		margin-bottom:@menu-body-padding-bottom;
+		margin-bottom: @menu-body-padding-bottom;
 
 		&.nth-child-odd {
 			clear: none;
@@ -42,8 +42,8 @@
 
 	.menu-item-inner {
 		background: @background-color;
-		padding-bottom:20px;
-		position:relative;
+		padding-bottom: 20px;
+		position: relative;
 
 		margin-left: 2.5%;
 		margin-right: 2.5%;
@@ -84,37 +84,35 @@
 
 		button {
 			&.visited {
-				background-color:@button-color-disabled;
-				color:@button-text-color-disabled;
+				background-color: @button-color-disabled;
+				color: @button-text-color-disabled;
 			}
 		}
 		text-align: center;
 	}
 
 	.menu-item-duration {
+		padding: @menu-body-padding;
 		text-align: center;
 	}
 
-	.page-level-progress-menu-item-indicator {
-		height: 8px;
-		background-color: @menu-item-progress-color;
-		border: none;
-		border-radius: 25px;
-		clear: both;
-	}
+	.js-menu-item-progress {
+		text-align: center;
 
-	.page-level-progress-menu-item-indicator-bar {
-		height: 8px;
-		background-color: @menu-item-progress-fill-color;
-		border-radius: 25px;
-	}
+		.pagelevelprogress-indicator {
+			background-color: @menu-item-progress-color;
+		}
 
+		.pagelevelprogress-indicator-bar {
+			background-color: @menu-item-progress-fill-color;
+		}
+	}
 }
 
 .menu-2-col {
 	@media all and (max-width: @device-width-medium) {
 		.menu-item {
-			width:100% !important;
+			width: 100% !important;
 			.menu-item-inner{
 				margin-left: 0% !important;
 				margin-right: 0% !important;
@@ -123,7 +121,7 @@
 	}
 	@media all and (min-width: @device-width-medium) {
 		.menu-item {
-			width:50% !important;
+			width: 50% !important;
 			.menu-item-inner{
 				margin-left: 1% !important;
 				margin-right: 1% !important;
@@ -135,7 +133,7 @@
 .menu-3-col {
 	@media all and (max-width: @device-width-medium) {
 		.menu-item {
-			width:100% !important;
+			width: 100% !important;
 			.menu-item-inner{
 				margin-left: 0% !important;
 				margin-right: 0% !important;
@@ -144,7 +142,7 @@
 	}
 	@media all and (min-width: @device-width-medium) {
 		.menu-item {
-			width:33% !important;
+			width: 33% !important;
 			.menu-item-inner{
 				margin-left: 2.5% !important;
 				margin-right: 2.5% !important;
@@ -156,7 +154,7 @@
 .menu-4-col {
 	@media all and (max-width: @device-width-medium) {
 		.menu-item {
-			width:100% !important;
+			width: 100% !important;
 			.menu-item-inner{
 				margin-left: 0% !important;
 				margin-right: 0% !important;
@@ -165,7 +163,7 @@
 	}
 	@media all and (min-width: @device-width-medium) {
 		.menu-item {
-			width:50% !important;
+			width: 50% !important;
 			.menu-item-inner{
 				margin-left: 2.5% !important;
 				margin-right: 2.5% !important;
@@ -174,7 +172,7 @@
 	}
 	@media all and (min-width: @device-width-large) {
 		.menu-item {
-			width:25% !important;
+			width: 25% !important;
 			.menu-item-inner{
 				margin-left: 2.5% !important;
 				margin-right: 2.5% !important;
@@ -186,7 +184,7 @@
 .menu-5-col {
 	@media all and (max-width: @device-width-medium) {
 		.menu-item {
-			width:100% !important;
+			width: 100% !important;
 			.menu-item-inner{
 				margin-left: 0% !important;
 				margin-right: 0% !important;
@@ -195,7 +193,7 @@
 	}
 	@media all and (min-width: @device-width-medium) {
 		.menu-item {
-			width:50% !important;
+			width: 50% !important;
 			.menu-item-inner{
 				margin-left: 2.5% !important;
 				margin-right: 2.5% !important;
@@ -204,7 +202,7 @@
 	}
 	@media all and (min-width: @device-width-large) {
 		.menu-item {
-			width:20% !important;
+			width: 20% !important;
 			.menu-item-inner{
 				margin-left: 2.5% !important;
 				margin-right: 2.5% !important;
@@ -223,26 +221,24 @@
 }
 
 @media all and (max-width: @device-width-medium) {
-	.menu-title-inner{
-		padding:15px 0 0;
-	}
 
-	.menu-body-inner{
-		padding:0px 0 10px;
-	}
-	.menu{
-		.menu-inner {
-			padding:0;
+	.deltaboxmenu-menu {
+		.menu-title-inner{
+			padding: 15px 0 0;
 		}
+
+		.menu-body-inner{
+			padding: 0px 0 10px;
+		}
+
 		.menu-item{
-			width:100%;
-			margin-bottom:20px;
+			width: 100%;
+			margin-bottom: 20px;
 			&.nth-child-even, &.nth-child-odd{
 				.menu-item-inner{
-					margin:0;
+					margin: 0;
 				}
 			}
-		}
-  }
-
+	  }
+	}
 }

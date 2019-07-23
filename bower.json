@@ -1,7 +1,7 @@
 {
   "name": "adapt-contrib-deltaboxMenu",
-  "version": "3.0.0",
-  "framework": ">=4",
+  "version": "2.1.4",
+  "framework": ">=2.1",
   "homepage": "https://github.com/deltanet/adapt-contrib-deltaboxmenu",
   "issues": "https://github.com/deltanet/adapt-contrib-deltaboxmenu/issues",
   "displayName": "DeltaNet Box menu",
