@@ -1,7 +1,7 @@
 {
   "name": "adapt-contrib-deltaboxMenu",
-  "version": "2.1.4",
-  "framework": ">=2.1",
+  "version": "3.0.0",
+  "framework": ">=4",
   "homepage": "https://github.com/deltanet/adapt-contrib-deltaboxmenu",
   "issues": "https://github.com/deltanet/adapt-contrib-deltaboxmenu/issues",
   "displayName": "DeltaNet Box menu",
@@ -12,6 +12,6 @@
     "adapt-plugin",
     "adapt-menu"
   ],
-  "license": "GPL-3.0",
+  "license": "GPLv3",
   "targetAttribute": "_deltaBoxMenu"
 }
