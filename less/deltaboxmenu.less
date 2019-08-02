@@ -1,9 +1,22 @@
 .deltaboxmenu-menu {
 	background: @primary-color;
+	
 	.menu-container {
-		.responsive-large;
-		.responsive-medium;
-		.responsive-small;
+		@media all and (min-width:@device-width-large) {
+        width: @device-width-large;
+        margin: 0 auto;
+    }
+
+    @media all and (max-width:@device-width-medium) and (min-width:(@device-width-small)) {
+        width: @device-width-small;
+        margin: 0 auto;
+    }
+
+    @media all and (max-width:(@device-width-small - 1px)) {
+        width: 100%;
+        margin: 0 auto;
+    }
+
 		&.full-width {
 			width: 100%;
 		}
@@ -23,8 +36,15 @@
 	}
 
 	.menu-item {
-		.responsive-medium;
-		.responsive-small;
+		@media all and (max-width:@device-width-medium) and (min-width:(@device-width-small)) {
+        width: @device-width-small;
+        margin: 0 auto;
+    }
+
+    @media all and (max-width:(@device-width-small - 1px)) {
+        width: 100%;
+        margin: 0 auto;
+    }
 
 		width: 25%;
 
@@ -71,8 +91,7 @@
 
 	.menu-item-title {
 		padding: @menu-body-padding-top @menu-body-padding-sides 0 @menu-body-padding-sides;
-		.item-title;
-		font-size: @item-title-font-size + 4px;
+		.sub-title;
 	}
 
 	.menu-item-body {
