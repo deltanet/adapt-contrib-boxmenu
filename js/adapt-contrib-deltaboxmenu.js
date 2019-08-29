@@ -1,22 +1,33 @@
 define([
-    'coreJS/adapt',
-    'coreViews/menuView'
+    'core/js/adapt',
+    'core/js/views/menuView'
 ], function(Adapt, MenuView) {
 
-    var BoxMenuView = MenuView.extend({
+    var DeltaBoxMenuView = MenuView.extend({
 
-        events: {},
+        className: function() {
+            return MenuView.prototype.className.apply(this) + " deltaboxmenu-menu";
+        },
+
+        attributes: function() {
+            return MenuView.prototype.resultExtend('attributes', {
+                'role': 'main',
+                'aria-labelledby': this.model.get('_id')+'-heading'
+            }, this);
+        },
 
         postRender: function() {
-
           this.listenTo(Adapt, "device:resize", this.resizeHeight);
 
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
-                if (item.get('_isAvailable')) {
-                    nthChild++;
-                    item.set("_nthChild", nthChild);
-                    this.$('.menu-container-inner').append(new BoxMenuItemView({model: item}).$el);
+                if (item.get('_isAvailable') && !item.get('_isHidden')) {
+                    item.set('_nthChild', ++nthChild);
+                    this.$('.js-children').append(new DeltaBoxMenuItemView({model: item}).$el);
+                }
+
+                if (item.get('_isHidden')) {
+                    item.set('_isReady', true);
                 }
             });
 
@@ -28,10 +39,10 @@ define([
           if (Adapt.device.screenSize === 'large') {
             var titleHeight = 0;
             var bodyHeight = 0;
-            var numItems = $(".menu-container-inner > .menu-item").length;
+            var numItems = $(".js-children > .menu-item").length;
 
-            var titleArray = new Array();
-            var bodyArray = new Array();
+            var titleArray = [];
+            var bodyArray = [];
 
             for(var i=1; i<=numItems; i++) {
               titleArray[i] = $('.nth-child-'+i).find('.menu-item-title-inner').height();
@@ -91,14 +102,21 @@ define([
         template: 'deltaboxmenu'
     });
 
-    var BoxMenuItemView = MenuView.extend({
+    var DeltaBoxMenuItemView = MenuView.extend({
 
         events: {
             'click button' : 'onClickMenuItemButton'
         },
 
+        attributes: function() {
+            return MenuView.prototype.resultExtend('attributes', {
+                'role': 'listitem',
+                'aria-labelledby': this.model.get('_id') + '-heading'
+            }, this);
+        },
+
         className: function() {
-            var nthChild = this.model.get("_nthChild");
+            var nthChild = this.model.get('_nthChild');
             return [
                 'menu-item',
                 'menu-item-' + this.model.get('_id') ,
@@ -122,18 +140,17 @@ define([
 
         postRender: function() {
             var graphic = this.model.get('_graphic');
-            if (graphic && graphic.src && graphic.src.length > 0) {
-                this.$el.imageready(_.bind(function() {
-                    this.setReadyStatus();
-                }, this));
-            } else {
-                this.setReadyStatus();
+            if (graphic && graphic.src) {
+                this.$el.imageready(this.setReadyStatus.bind(this));
+                return;
             }
+
+            this.setReadyStatus();
         },
 
         onClickMenuItemButton: function(event) {
-            if(event && event.preventDefault) event.preventDefault();
-            if(this.model.get('_isLocked')) return;
+            if (event && event.preventDefault) event.preventDefault();
+            if (this.model.get('_isLocked')) return;
             Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
         }
 
@@ -142,7 +159,7 @@ define([
     });
 
     Adapt.on('router:menu', function(model) {
-        $('#wrapper').append(new BoxMenuView({model: model}).$el);
+        $('#wrapper').append(new DeltaBoxMenuView({model: model}).$el);
     });
 
 });

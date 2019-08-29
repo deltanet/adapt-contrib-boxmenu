@@ -1,24 +1,16 @@
 # adapt-contrib-deltaboxmenu  
 
-Menu choices are framed within a box element and arranged in a grid. **Box Menu** allows you to direct the learner to either further menus (sub menus) or to one or more pages of content. The **Box Menu** default is show a title, an image, some body text, duration, a progress indicator and a link button.
-
-[Visit the **Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-boxmenu/wiki) for more information about its functionality and for explanations of key properties. Options include an estimated time for completion (duration) and a progress bar to indicate the percentage of components that have been completed.
+Menu choices are framed within a box element and arranged in a grid. **Delta Box Menu** allows you to direct the learner to either further menus (sub menus) or to one or more pages of content. The **Delta Box Menu** default is show a title, an image, some body text, duration, a progress indicator and a link button.
 
 ## Installation
 
 This plugin must be installed manually.
 
-* If **Box Menu** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).
-
-## Uninstallation  
-The Adapt framework does not allow the installation of more than one menu at a time. In order to replace **Box Menu** it must be uninstalled. With the root of your framework installation as your current working directory, run the following command:  
-`adapt uninstall adapt-contrib-deltaboxmenu`  
-
-<div float align=right><a href="#top">Back to Top</a></div>  
+If **Delta Box Menu** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).
 
 ## Settings Overview
 
-The attributes listed below are used in *contentObjects.json* to configure **Box Menu**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-contrib-deltaboxmenu/blob/master/example.json). Visit the [**Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-deltaboxmenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki).
+The attributes listed below are used in *contentObjects.json* to configure **Delta Box Menu**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-contrib-deltaboxmenu/blob/master/example.json). Visit the [**Delta Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-deltaboxmenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki).
 
 ### Attributes
 
@@ -29,8 +21,6 @@ The attributes listed below are used in *contentObjects.json* to configure **Box
 **_type** (string): This value determines what the learner will access by clicking the provided link/button. Acceptable values are `"page"` and `"menu"`. `"page"` will direct the learner to a page structured with articles, blocks, and components. `"menu"` will direct the learner to a page with more menus.
 
 **_classes** (string): CSS class name to be applied to menu item's `page` element (*src/core/js/views/pageView.js*). The class must be predefined in one of the Less files. Separate multiple classes with a space.
-
-**_isHidden** (boolean): If you want to hide a content object from the menu, set this to `true`. This can be useful if, for example, you have a content object defined as a 'start page' for the course which you therefore don't want to be listed on the menu since the user will have already seen it.
 
 **title** (string): This text is a reference title for the content object.
 
@@ -67,5 +57,5 @@ No known limitations.
 **Author / maintainer:** Forked from [Adapt Core](https://github.com/adaptlearning/adapt-contrib-boxmenu) / DeltaNet    
 **Accessibility support:** WAI AA   
 **RTL support:** yes  
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE 11, IE Mobile 11, Safari 11+12 for macOS+iOS, Opera  
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, IE Mobile 11, Safari 11+12 for macOS+iOS, Opera  
 **Authoring Tool support:** yes  
