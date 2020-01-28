@@ -11,14 +11,18 @@
             {{/if}}
         {{/if}}
     </div>
+    {{#if displayTitle}}
     <div class="menu-item-title">
         <div class="js-heading" data-a11y-heading-type="menuItem"></div>
         <div class="menu-item-title-inner h3 accessible-text-block" aria-hidden="true">{{{compile displayTitle}}}</div>
     </div>
+    {{/if}}
     {{#if _graphic.src}}{{a11y_aria_image _deltaBoxMenu._graphic.alt}}{{/if}}
+    {{#if body}}
     <div class="menu-item-body">
         <div class="menu-item-body-inner">{{{compile body}}}</div>
     </div>
+    {{/if}}
     <div class="menu-item-button">
         <button aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}}" {{#if _isLocked}}disabled="disabled"{{/if}}>
             {{#if _isLocked}}
