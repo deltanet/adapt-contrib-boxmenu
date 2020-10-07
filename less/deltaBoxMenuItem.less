@@ -1,0 +1,24 @@
+.boxmenu-item {
+  width: 100%;
+
+  @media (min-width: @device-width-medium) {
+    width: 50%;
+  }
+
+  float: left;
+  .dir-rtl & {
+    float: right;
+  }
+
+  &.nth-child-odd {
+    clear: none;
+  }
+
+  .menu-item__image {
+    &:hover {
+      img {
+        opacity: 0.5;
+      }
+    }
+  }
+}

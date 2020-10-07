@@ -1,8 +1,4 @@
-# adapt-contrib-boxMenu  
-
-**Box Menu** is a *menu* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
-
-<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/boxmenu01.png" alt="image of two rectangular menu options produced by box menu">
+# adapt-contrib-deltaboxmenu  
 
 Menu choices are framed within a box element and arranged in a grid. **Box Menu** allows you to direct the learner to either further menus (sub menus) or to one or more pages of content. The **Box Menu** default is show a title, an image, some body text, duration, a progress indicator and a link button.
 
@@ -32,14 +28,14 @@ The Adapt framework does not allow the installation of more than one menu at a t
 
 ## Settings Overview
 
-The attributes listed below are used in *course.json* and *contentObjects.json* to configure **Box Menu**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-boxmenu/blob/master/example.json). Visit the [**Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-boxMenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki). 
+The attributes listed below are used in *course.json* and *contentObjects.json* to configure **Box Menu**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-boxmenu/blob/master/example.json). Visit the [**Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-boxMenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki).
 
 ### Attributes
 
 #### *course.json*
 The following attributes, set within *course.json*, configure the defaults for **Box Menu**.
 
-**\_boxMenu** (object): The boxMenu object that contains value for **\_menuHeader**.
+**\_deltaBoxMenu** (object): The boxMenu object that contains value for **\_menuHeader**.
 
 **\_menuHeader** (object): The menuHeader object that contains values for **\_backgroundImage** and **\_minimumHeights**.
 
@@ -64,9 +60,9 @@ The following attributes, set within *contentObjects.json*, configure the defaul
 
 **\_id** (string): This is a unique identifier that establishes relationships with other content structures. It is referenced in *articles.json* as the `_parentid` of an article model.   
 
-**\_parentId** (string): This value is sourced from the parent element's `_id` found within *course.json*. It must match. 
+**\_parentId** (string): This value is sourced from the parent element's `_id` found within *course.json*. It must match.
 
-**\_type** (string): This value determines what the learner will access by clicking the provided link/button. Acceptable values are `"page"` and `"menu"`. `"page"` will direct the learner to a page structured with articles, blocks, and components. `"menu"` will direct the learner to a page with more menus. 
+**\_type** (string): This value determines what the learner will access by clicking the provided link/button. Acceptable values are `"page"` and `"menu"`. `"page"` will direct the learner to a page structured with articles, blocks, and components. `"menu"` will direct the learner to a page with more menus.
 
 **\_classes** (string): CSS class name to be applied to menu item's `page` element (*src/core/js/views/pageView.js*). The class must be predefined in one of the Less files. Separate multiple classes with a space.
 
@@ -105,7 +101,7 @@ No known limitations.
 ----------------------------
 **Version number:**  5.0.0   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>  
 **Framework versions:**  5+  
-**Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-contrib-boxmenu/graphs/contributors)  
+**Author / maintainer:** Forked from [Adapt Core](https://github.com/adaptlearning/adapt-contrib-boxmenu) / DeltaNet
 **Accessibility support:** WAI AA  
 **RTL support:** Yes  
 **Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, Safari 12+13 for macOS/iOS/iPadOS, Opera  

@@ -1,5 +1,5 @@
     // course.json
-    "_boxMenu": {
+    "_deltaBoxMenu": {
         "_backgroundImage": {
             "_large": "course/en/images/example.jpg",
             "_medium": "course/en/images/example.jpg",
@@ -44,5 +44,17 @@
             "src": "course/en/images/origami-menu-one.jpg"
         },
         "linkText": "View",
-        "duration": "2 mins"
+        "duration": "2 mins",
+        "_deltaBoxMenu": {
+          "_graphic": {
+              "locked": "course/en/images/topic-menu-locked.jpg",
+              "src": "course/en/images/origami-menu-one.jpg",
+              "alt": ""
+          },
+          "linkLockedText": "Locked",
+          "linkVisitedText": "Revisit",
+          "durationLabel": "",
+          "_inRow": 2,
+          "_fullwidth": false
+        }
     }

@@ -2,7 +2,7 @@ define([
   "core/js/views/menuItemView"
 ], function(MenuItemView) {
 
-  var BoxMenuItemView = MenuItemView.extend({
+  var DeltaBoxMenuItemView = MenuItemView.extend({
 
     events: {
       'click .js-btn-click' : 'onClickMenuItemButton'
@@ -16,9 +16,9 @@ define([
 
   }, {
     className: 'boxmenu-item',
-    template: 'boxMenuItem'
+    template: 'deltaBoxMenuItem'
   });
 
-  return BoxMenuItemView;
+  return DeltaBoxMenuItemView;
 
 });
