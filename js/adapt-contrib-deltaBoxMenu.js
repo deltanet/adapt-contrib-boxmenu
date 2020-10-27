@@ -8,7 +8,6 @@ define([
 
     initialize: function() {
       MenuView.prototype.initialize.apply(this);
-      this.setStyles();
 
       this.listenTo(Adapt, {
         "device:changed": this.onDeviceResize
@@ -20,13 +19,15 @@ define([
     },
 
     setStyles: function() {
+      this.model.set('_deltaBoxMenuConfig', Adapt.course.get('_deltaBoxMenu'));
+
       this.setBackgroundImage();
       this.setBackgroundStyles();
       this.processHeader();
     },
 
     setBackgroundImage: function() {
-      var config = this.model.get('_deltaBoxMenu');
+      var config = this.model.get('_deltaBoxMenuConfig');
       var backgroundImages = config && config._backgroundImage;
 
       if (!backgroundImages) return;
@@ -56,7 +57,7 @@ define([
     },
 
     setBackgroundStyles: function () {
-      var config = this.model.get('_deltaBoxMenu');
+      var config = this.model.get('_deltaBoxMenuConfig');
       var styles = config && config._backgroundStyles;
 
       if (!styles) return;
@@ -69,7 +70,7 @@ define([
     },
 
     processHeader: function() {
-      var config = this.model.get('_deltaBoxMenu');
+      var config = this.model.get('_deltaBoxMenuConfig');
       var header = config && config._menuHeader;
 
       if (!header) return;
@@ -123,9 +124,7 @@ define([
     },
 
     setHeaderMinimumHeight: function(config, $header) {
-      this.resizeWidth();
       var minimumHeights = config._minimumHeights;
-
       if (!minimumHeights) return;
 
       var minimumHeight;
@@ -140,7 +139,6 @@ define([
         default:
           minimumHeight = minimumHeights._small;
       }
-
       if (minimumHeight) {
         $header
           .addClass("has-min-height")
@@ -149,37 +147,6 @@ define([
         $header
           .removeClass("has-min-height")
           .css("min-height", "");
-      }
-    },
-
-    resizeWidth: function() {
-      // Full width
-      if (this.model.get("_deltaBoxMenu")._fullwidth) {
-        $('.menu__inner').addClass('full-width');
-      }
-
-      if (this.model.get("_deltaBoxMenu")._inRow != undefined || this.model.get("_deltaBoxMenu")._inRow != "") {
-        var numInRow = this.model.get("_deltaBoxMenu")._inRow;
-      } else {
-        return;
-      }
-
-      var width = 100 / numInRow;
-      // Round down to one decimal place
-      var itemWidth = Math.floor(width * 10) / 10;
-
-      if (Adapt.device.screenSize === 'large') {
-        $('.menu-item').css('width', itemWidth + '%');
-        $('.menu-item__inner').css({
-          'margin-left': '2%',
-          'margin-right': '2%'
-        });
-      } else {
-        $('.menu-item').css('width', '100%');
-        $('.menu-item__inner').css({
-          'margin-left': '0%',
-          'margin-right': '0%'
-        });
       }
     }
 
