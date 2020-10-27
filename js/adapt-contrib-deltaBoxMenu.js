@@ -1,7 +1,7 @@
 define([
   'core/js/adapt',
   'core/js/views/menuView',
-  "./adapt-contrib-deltaBoxMenuItemView"
+  './adapt-contrib-deltaBoxMenuItemView'
 ], function(Adapt, MenuView, DeltaBoxMenuItemView) {
 
   var DeltaBoxMenuView = MenuView.extend({
@@ -10,7 +10,7 @@ define([
       MenuView.prototype.initialize.apply(this);
 
       this.listenTo(Adapt, {
-        "device:changed": this.onDeviceResize
+        'device:changed': this.onDeviceResize
       });
     },
 
@@ -35,10 +35,10 @@ define([
       var backgroundImage;
 
       switch (Adapt.device.screenSize) {
-        case "large":
+        case 'large':
           backgroundImage = backgroundImages._large;
           break;
-        case "medium":
+        case 'medium':
           backgroundImage = backgroundImages._medium;
           break;
         default:
@@ -47,16 +47,16 @@ define([
 
       if (backgroundImage) {
         this.$el
-          .addClass("has-bg-image")
-          .css("background-image", "url(" + backgroundImage + ")");
+          .addClass('has-bg-image')
+          .css('background-image', 'url(' + backgroundImage + ')');
       } else {
         this.$el
-          .removeClass("has-bg-image")
-          .css("background-image", "");
+          .removeClass('has-bg-image')
+          .css('background-image', '');
       }
     },
 
-    setBackgroundStyles: function () {
+    setBackgroundStyles: function() {
       var config = this.model.get('_deltaBoxMenuConfig');
       var styles = config && config._backgroundStyles;
 
@@ -90,10 +90,10 @@ define([
       var backgroundImage;
 
       switch (Adapt.device.screenSize) {
-        case "large":
+        case 'large':
           backgroundImage = backgroundImages._large;
           break;
-        case "medium":
+        case 'medium':
           backgroundImage = backgroundImages._medium;
           break;
         default:
@@ -102,16 +102,16 @@ define([
 
       if (backgroundImage) {
         $header
-          .addClass("has-bg-image")
-          .css("background-image", "url(" + backgroundImage + ")");
+          .addClass('has-bg-image')
+          .css('background-image', 'url(' + backgroundImage + ')');
       } else {
         $header
-          .removeClass("has-bg-image")
-          .css("background-image", "");
+          .removeClass('has-bg-image')
+          .css('background-image', '');
       }
     },
 
-    setHeaderBackgroundStyles: function (config, $header) {
+    setHeaderBackgroundStyles: function(config, $header) {
       var styles = config._backgroundStyles;
 
       if (!styles) return;
@@ -130,10 +130,10 @@ define([
       var minimumHeight;
 
       switch (Adapt.device.screenSize) {
-        case "large":
+        case 'large':
           minimumHeight = minimumHeights._large;
           break;
-        case "medium":
+        case 'medium':
           minimumHeight = minimumHeights._medium;
           break;
         default:
@@ -141,12 +141,12 @@ define([
       }
       if (minimumHeight) {
         $header
-          .addClass("has-min-height")
-          .css("min-height", minimumHeight + "px");
+          .addClass('has-min-height')
+          .css('min-height', minimumHeight + 'px');
       } else {
         $header
-          .removeClass("has-min-height")
-          .css("min-height", "");
+          .removeClass('has-min-height')
+          .css('min-height', '');
       }
     }
 
@@ -157,7 +157,9 @@ define([
   });
 
   Adapt.on('router:menu', function(model) {
-    $('#wrapper').append(new DeltaBoxMenuView({model: model}).$el);
+    $('#wrapper').append(new DeltaBoxMenuView({
+      model: model
+    }).$el);
   });
 
 });

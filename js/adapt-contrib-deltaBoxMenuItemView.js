@@ -1,6 +1,6 @@
 define([
   'core/js/adapt',
-  "core/js/views/menuItemView"
+  'core/js/views/menuItemView'
 ], function(Adapt, MenuItemView) {
 
   var DeltaBoxMenuItemView = MenuItemView.extend({
@@ -11,7 +11,7 @@ define([
 
     preRender: function() {
       this.listenTo(Adapt, {
-        "device:changed": this.resizeWidth
+        'device:changed': this.resizeWidth
       });
     },
 
