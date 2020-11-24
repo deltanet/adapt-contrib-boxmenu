@@ -1,17 +1,22 @@
 .deltaboxmenu {
   .l-container-responsive(@max-width);
 
-  &__header-inner {
+  .menu__header-inner {
     .l-container-responsive(@device-width-large);
   }
 
-  &__item-container-inner {
+  .menu__item-container-inner {
     display: flex;
     flex-wrap: wrap;
     .l-container-responsive(@device-width-large);
   }
 
-  .full-width {
-	  width: 100% !important;
+  &.is-full-width {
+	  .l-container-responsive(@max-width);
+
+    .menu__header-inner,
+    .menu__item-container-inner {
+      .l-container-responsive(@max-width);
+    }
 	}
 }

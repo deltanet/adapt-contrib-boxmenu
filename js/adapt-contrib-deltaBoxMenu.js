@@ -149,7 +149,6 @@ define([
           .css('min-height', '');
       }
     }
-
   }, {
     childView: DeltaBoxMenuItemView,
     className: 'deltaboxmenu',

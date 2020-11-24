@@ -1,13 +1,13 @@
 {{import_globals}}
 
-<div class="menu-item__inner boxmenu-item__inner {{#if _isLocked}}locked{{/if}}">
+<div class="menu-item__inner boxmenu-item__inner {{#if _isLocked}}is-locked{{/if}}">
 
   {{#if _graphic.src}}
   <div class="menu-item__image-container boxmenu-item__image-container">
     {{#if _isLocked}}
       <img class="menu-item__image boxmenu-item__image" src="{{_deltaBoxMenu._graphic.locked}}" aria-hidden="true">
     {{else}}
-      <a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}" aria-hidden="true">
+      <a href="#/id/{{_id}}" class="{{#if _isVisited}}is-visited{{/if}}" aria-hidden="true">
         <img class="menu-item__image boxmenu-item__image" src="{{_graphic.src}}" aria-hidden="true">
       </a>
     {{/if}}
@@ -58,7 +58,7 @@
       {{#if duration}}
       <div class="menu-item__duration boxmenu-item__duration">
         <div class="menu-item__duration-inner boxmenu-item__duration-inner">
-          {{#if _globals._menu._deltaBoxMenu.durationLabel}}{{{_globals._menu._deltaBoxMenu.durationLabel}}}{{/if}} {{{_deltaBoxMenu.durationLabel}}} {{{duration}}}
+          {{{_deltaBoxMenu.durationLabel}}} {{{duration}}}
         </div>
       </div>
       {{/if}}

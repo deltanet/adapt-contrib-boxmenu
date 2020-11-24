@@ -16,7 +16,7 @@ define([
     },
 
     postRender: function() {
-      this.resizeWidth();
+      this.resizeHeight();
       this.$el.imageready(this.setReadyStatus.bind(this));
     },
 
@@ -26,13 +26,42 @@ define([
       Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
     },
 
+    resizeHeight: function() {
+      this.resizeWidth();
+
+      if (Adapt.device.screenSize === 'large') {
+        var titleHeight = 0;
+        var bodyHeight = 0;
+        var $container = $('.js-children');
+
+        $container.find('.menu-item__title-inner').each(function() {
+          if ($(this).height() > titleHeight) {
+            titleHeight = $(this).height();
+          }
+        });
+
+        $container.find('.menu-item__body-inner').each(function() {
+          if ($(this).height() > bodyHeight) {
+            bodyHeight = $(this).height();
+          }
+        });
+
+        $('.menu-item').find('.menu-item__title-inner').css('min-height',titleHeight);
+        $('.menu-item').find('.menu-item__body-inner').css('min-height',bodyHeight);
+
+      } else {
+        $('.menu-item').find('.menu-item__title-inner').css('min-height',0);
+        $('.menu-item').find('.menu-item__body-inner').css('min-height',0);
+      }
+    },
+
     resizeWidth: function() {
       // Full width
       var deltaBoxMenu = this.model.getParent().get('_deltaBoxMenu');
 
       if (!deltaBoxMenu) return;
       if (deltaBoxMenu._fullwidth) {
-        this.$('.menu__inner').addClass('full-width');
+        $('.deltaboxmenu').addClass('is-full-width');
       }
 
       if (deltaBoxMenu._inRow != undefined || deltaBoxMenu._inRow != "") {
@@ -47,7 +76,7 @@ define([
 
       if (Adapt.device.screenSize === 'large') {
 
-        $('.boxmenu-item').css('width', itemWidth + '%');
+        $('.menu-item').css('width', itemWidth + '%');
         $('.menu-item__inner').css({
           'margin-left': '2%',
           'margin-right': '2%'
