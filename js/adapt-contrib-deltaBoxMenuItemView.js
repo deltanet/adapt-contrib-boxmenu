@@ -11,12 +11,12 @@ define([
 
     preRender: function() {
       this.listenTo(Adapt, {
-        'device:changed': this.resizeWidth
+        'device:resize': this.onDeviceResize
       });
     },
 
     postRender: function() {
-      this.resizeHeight();
+      this.onDeviceResize();
       this.$el.imageready(this.setReadyStatus.bind(this));
     },
 
@@ -26,7 +26,7 @@ define([
       Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
     },
 
-    resizeHeight: function() {
+    onDeviceResize: function() {
       this.resizeWidth();
 
       if (Adapt.device.screenSize === 'large') {
@@ -89,9 +89,8 @@ define([
         });
       }
     }
-
   }, {
-    className: 'boxmenu-item',
+    className: 'deltaboxmenu-item',
     template: 'deltaBoxMenuItem'
   });
 
