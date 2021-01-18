@@ -46,12 +46,12 @@ define([
           }
         });
 
-        $('.menu-item').find('.menu-item__title-inner').css('min-height',titleHeight);
-        $('.menu-item').find('.menu-item__body-inner').css('min-height',bodyHeight);
+        $('.menu-item').find('.menu-item__title').css('min-height',titleHeight);
+        $('.menu-item').find('.menu-item__body').css('min-height',bodyHeight);
 
       } else {
-        $('.menu-item').find('.menu-item__title-inner').css('min-height',0);
-        $('.menu-item').find('.menu-item__body-inner').css('min-height',0);
+        $('.menu-item').find('.menu-item__title').css('min-height',0);
+        $('.menu-item').find('.menu-item__body').css('min-height',0);
       }
     },
 
