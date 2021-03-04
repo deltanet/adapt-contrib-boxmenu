@@ -4,13 +4,11 @@
 
   {{#if _graphic.src}}
   <div class="menu-item__image-container deltaboxmenu-item__image-container">
-    {{#if _isLocked}}
-      <img class="menu-item__image deltaboxmenu-item__image" src="{{_deltaBoxMenu._graphic.locked}}" aria-hidden="true">
-    {{else}}
-      <a href="#/id/{{_id}}" class="{{#if _isVisited}}is-visited{{/if}}" aria-hidden="true">
-        <img class="menu-item__image deltaboxmenu-item__image" src="{{_graphic.src}}" aria-hidden="true">
-      </a>
-    {{/if}}
+
+    <button class="menu-item__image deltaboxmenu-item__image js-btn-click{{#if _isVisited}} is-visited{{/if}}{{#if _isLocked}} is-locked{{/if}}" aria-hidden="true"{{#if _isLocked}} disabled="disabled"{{/if}}>
+      <img src="{{#if _isLocked}}{{_deltaBoxMenu._graphic.locked}}{{else}}{{_graphic.src}}{{/if}}" aria-hidden="true">
+    </button>
+
   </div>
   {{/if}}
 
