@@ -48,7 +48,6 @@
         "_deltaBoxMenu": {
           "_graphic": {
               "locked": "course/en/images/topic-menu-locked.jpg",
-              "src": "course/en/images/origami-menu-one.jpg",
               "alt": ""
           },
           "linkLockedText": "Locked",
