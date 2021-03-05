@@ -44,13 +44,13 @@
 
 	.menu-item {
 		@media all and (max-width:@device-width-medium) and (min-width:(@device-width-small)) {
-        width: @device-width-small;
-        margin: 0 auto;
+      width: @device-width-small;
+      margin: 0 auto;
     }
 
     @media all and (max-width:(@device-width-small - 1px)) {
-        width: 100%;
-        margin: 0 auto;
+      width: 100%;
+      margin: 0 auto;
     }
 
 		width: 25%;
@@ -77,23 +77,61 @@
 	}
 
 	.menu-item-graphic {
-		&:hover {
-			img {
-				opacity: 0.5;
+		img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+		img.image-hover,
+		img.image-visited,
+		img.image-locked {
+			display: none;
+		}
+
+		.no-touch &:not(.locked):hover {
+			img.image-default,
+			img.image-visited,
+			img.image-locked {
+				display: none;
+			}
+
+			img.image-hover {
+				display: block;
 			}
 		}
-	}
 
-	.menu-item-graphic a {
-		&:hover {
-			img {
-				opacity: 0.5;
+		&.visited {
+			img.image-default,
+			img.image-locked,
+			img.image-hover {
+				display: none !important;
+			}
+
+			img.image-visited {
+				display: block !important;
 			}
 		}
-	}
 
-	.menu-graphic a {
-		display: block;
+		&.locked {
+			img.image-default,
+			img.image-visited,
+			img.image-hover {
+				display: none !important;
+			}
+
+			img.image-locked {
+				display: block !important;
+			}
+		}
+
+		&.item-states-css {
+			.no-touch &:hover {
+				img {
+					opacity: 0.5;
+				}
+			}
+		}
 	}
 
 	.menu-item-title {
@@ -247,7 +285,6 @@
 }
 
 @media all and (max-width: @device-width-medium) {
-
 	.deltaboxmenu-menu {
 		.menu-title-inner{
 			padding: 15px 0 0;

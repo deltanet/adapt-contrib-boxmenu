@@ -34,23 +34,34 @@
                 "_graphic": {
                   "type": "object",
                   "required": false,
-                  "title": "Page Locked Graphic",
+                  "title": "Graphics",
                   "properties": {
+                    "hover": {
+                      "type": "string",
+                      "required": false,
+                      "title": "Hover Graphic",
+                      "default": "",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Hover state for the image button"
+                    },
+                    "visited": {
+                      "type": "string",
+                      "required": false,
+                      "title": "Visited Graphic",
+                      "default": "",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Image displayed for this menu item when visited"
+                    },
                     "locked": {
                       "type": "string",
                       "required": false,
+                      "title": "Locked Graphic",
                       "default": "",
                       "inputType": "Asset:image",
                       "validators": [],
                       "help": "Image displayed for this menu item when locked"
-                    },
-                    "src": {
-                      "type": "string",
-                      "required": true,
-                      "default": "",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Background image for this page"
                     },
                     "alt": {
                       "type": "string",

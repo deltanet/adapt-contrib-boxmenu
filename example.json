@@ -16,8 +16,9 @@
     "_comment": "_lockType = sequential | unlockFirst | lockLast | custom",
     "_deltaBoxMenu": {
       "_graphic": {
-          "locked": "course/en/images/topic-menu-locked.jpg",
-          "src": "course/en/images/origami-menu-one.jpg",
+          "hover": "course/en/images/topic-menu-one.jpg",
+          "visited": "course/en/images/topic-menu-one.jpg",
+          "locked": "course/en/images/origami-menu-locked.jpg",
           "alt": ""
       },
       "linkLockedText": "Locked",
@@ -46,8 +47,9 @@
     "duration":"2 mins",
     "_deltaBoxMenu": {
       "_graphic": {
-          "locked": "course/en/images/topic-menu-locked.jpg",
-          "src": "course/en/images/origami-menu-one.jpg",
+          "hover": "course/en/images/topic-menu-one.jpg",
+          "visited": "course/en/images/topic-menu-one.jpg",
+          "locked": "course/en/images/origami-menu-locked.jpg",
           "alt": ""
       },
       "linkLockedText": "Locked",

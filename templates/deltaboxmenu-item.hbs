@@ -1,28 +1,31 @@
 {{import_globals}}
+
 <div class="menu-item-inner {{#if _isLocked}}locked{{/if}}">
-    <div class="menu-item-graphic">
-        {{#if _graphic.src}}
-            {{#if _isLocked}}
-              <img src="{{_deltaBoxMenu._graphic.locked}}" aria-hidden="true" />
-            {{else}}
-              <a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}" aria-hidden="true">
-                  <img src="{{_graphic.src}}" aria-hidden="true"/>
-              </a>
-            {{/if}}
-        {{/if}}
-    </div>
+
+    {{#if _graphic.src}}
+    <button class="base menu-item-graphic{{#unless _deltaBoxMenu._graphic.hover}} item-states-css{{/unless}}{{#if _isVisited}} visited{{/if}}{{#if _isLocked}} locked{{/if}}" aria-hidden="true"{{#if _isLocked}} disabled="disabled"{{/if}}>
+      <img src="{{_graphic.src}}" class="image-default" aria-hidden="true">
+      <img src="{{#if _deltaBoxMenu._graphic.hover}}{{_deltaBoxMenu._graphic.hover}}{{else}}{{_graphic.src}}{{/if}}" class="image-hover" aria-hidden="true">
+      <img src="{{#if _deltaBoxMenu._graphic.visited}}{{_deltaBoxMenu._graphic.visited}}{{else}}{{_graphic.src}}{{/if}}" class="image-visited" aria-hidden="true">
+      <img src="{{#if _deltaBoxMenu._graphic.locked}}{{_deltaBoxMenu._graphic.locked}}{{else}}{{_graphic.src}}{{/if}}" class="image-locked" aria-hidden="true">
+    </button>
+    {{/if}}
+
     {{#if displayTitle}}
     <div class="menu-item-title">
         <div class="js-heading" data-a11y-heading-type="menuItem"></div>
         <div class="menu-item-title-inner h3 accessible-text-block" aria-hidden="true">{{{compile displayTitle}}}</div>
     </div>
     {{/if}}
+
     {{#if _graphic.src}}{{a11y_aria_image _deltaBoxMenu._graphic.alt}}{{/if}}
+
     {{#if body}}
     <div class="menu-item-body">
         <div class="menu-item-body-inner">{{{compile body}}}</div>
     </div>
     {{/if}}
+
     <div class="menu-item-button">
         <button aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}}" {{#if _isLocked}}disabled="disabled"{{/if}}>
             {{#if _isLocked}}
@@ -36,8 +39,10 @@
             {{/if}}
         </button>
     </div>
+
     {{#if duration}}
         <div class="menu-item-duration">{{#if _globals._menu._deltaBoxMenu.durationLabel}}{{{_globals._menu._deltaBoxMenu.durationLabel}}}{{/if}} {{{_deltaBoxMenu.durationLabel}}} {{{duration}}}</div>
     {{/if}}
+
     <div class="js-menu-item-progress"></div>
 </div>
