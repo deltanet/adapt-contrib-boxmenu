@@ -7,7 +7,7 @@
     <div class="menu__header-inner deltaboxmenu__header-inner">
 
       {{#if displayTitle}}
-      <div class="menu__title deltaboxmenu__title">
+      <div class="menu__title deltaboxmenu__title{{#any subtitle body instruction}} add-margin{{/any}}">
 
         {{#unless _disableAccessibleState}}
         <div class="js-heading"></div>
@@ -29,7 +29,7 @@
       {{/if}}
 
       {{#if body}}
-      <div class="menu__body deltaboxmenu__body">
+      <div class="menu__body deltaboxmenu__body{{#if subtitle}} add-margin{{/if}}">
         <div class="menu__body-inner deltaboxmenu__body-inner">
           {{{compile body}}}
         </div>
@@ -37,7 +37,7 @@
       {{/if}}
 
       {{#if instruction}}
-      <div class="menu__instruction deltaboxmenu__instruction">
+      <div class="menu__instruction deltaboxmenu__instruction{{#any subtitle body}} add-margin{{/any}}">
         <div class="menu__instruction-inner deltaboxmenu__instruction-inner">
           {{{compile instruction}}}
         </div>
