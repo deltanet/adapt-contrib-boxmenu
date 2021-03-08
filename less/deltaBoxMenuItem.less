@@ -15,5 +15,55 @@
       margin-right: auto;
       min-width: 0;
     }
+
+		img.image-hover,
+		img.image-visited,
+		img.image-locked {
+			display: none;
+		}
+
+		.no-touch &:not(.is-locked):hover {
+			img.image-default,
+			img.image-visited,
+			img.image-locked {
+				display: none;
+			}
+
+			img.image-hover {
+				display: block;
+			}
+		}
+
+		&.is-visited {
+			img.image-default,
+			img.image-locked,
+			img.image-hover {
+				display: none !important;
+			}
+
+			img.image-visited {
+				display: block !important;
+			}
+		}
+
+		&.is-locked {
+			img.image-default,
+			img.image-visited,
+			img.image-hover {
+				display: none !important;
+			}
+
+			img.image-locked {
+				display: block !important;
+			}
+		}
+
+		&.item-states-css {
+			.no-touch &:hover {
+				img {
+					opacity: 0.5;
+				}
+			}
+		}
   }
 }

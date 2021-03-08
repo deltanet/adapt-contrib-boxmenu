@@ -47,6 +47,8 @@
         "duration": "2 mins",
         "_deltaBoxMenu": {
           "_graphic": {
+              "hover": "",
+              "visited": "",
               "locked": "course/en/images/topic-menu-locked.jpg",
               "alt": ""
           },
