@@ -84,8 +84,8 @@ define([
       } else {
         $('.menu-item').css('width', '100%');
         $('.menu-item__inner').css({
-          'margin-left': '0%',
-          'margin-right': '0%'
+          'margin-left': '',
+          'margin-right': ''
         });
       }
     }
